@@ -1,7 +1,4 @@
-title: "SignalTrove 블로그"
-description: "시그널트로브의 기술 블로그"
-theme: minima
-
-# Github Pages 기본 플러그인
-plugins:
-  - jekyll-feed
+title: signaltrove.github.io
+description: SignalTrove 블로그
+url: https://signaltrove.github.io
+baseurl: ""    # User/Org 페이지는 빈 문자열
