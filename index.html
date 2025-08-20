@@ -4,6 +4,22 @@ title: 홈
 ---
 
 <div class="wrap">
+  <!-- ⬇️ 소개 카드 (카테고리 섹션 '바로 위') -->
+  <div class="card" style="padding:18px 20px;margin-bottom:22px">
+    <div style="display:flex;gap:16px;align-items:center">
+      <img src="{{ '/assets/img/about/cover.jpg' | relative_url }}" alt="About SignalTrove"
+           style="width:96px;height:96px;object-fit:cover;border-radius:12px">
+      <div>
+        <h2 style="margin:0 0 6px">SignalTrove</h2>
+        <p class="desc" style="margin:0">
+          경제·투자, IT·기술 트렌드, 암호화폐, 학습·자기계발을 다루는 실전형 블로그입니다.
+          자동 크롤링·요약, 지표·전략, 시스템 트레이딩과 자동화를 다룹니다.
+          <a href="{{ '/about/' | relative_url }}">자세히 보기</a>
+        </p>
+      </div>
+    </div>
+  </div>
+  <!-- ▲ 소개 카드 끝 -->
   {% assign wanted = "경제·투자|IT·기술 트렌드|라이프스타일·건강|학습·자기계발" | split: "|" %}
 
   {% for cname in wanted %}
