@@ -24,12 +24,12 @@ title: 홈
 
   {% for cname in wanted %}
     {% assign posts_in_cat = site.categories[cname] %}
-    {% if posts_in_cat and posts_in_cat.size > 0 %}
-      {% assign posts_sorted = posts_in_cat | sort: "date" | reverse %}
-      <div style="margin-bottom:28px">
+      {% if posts_in_cat and posts_in_cat.size > 0 %}
+        {% assign posts_sorted = posts_in_cat | sort: "date" | reverse %}
+        {% capture cat_slug %}{{ cname | slugify }}{% endcapture %}
         <div class="section-head">
           <h2>{{ cname }}</h2>
-          <a href="{{ '/category/' | append: cname | append: '/' | relative_url }}">더 보기</a>
+          <a href="{{ '/category/' | append: cat_slug | append: '/' | relative_url }}">더 보기</a>
         </div>
         <div class="cards">
           {% for p in posts_sorted limit:4 %}
