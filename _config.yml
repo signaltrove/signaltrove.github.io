@@ -1,27 +1,13 @@
-# _config.yml
 title: SignalTrove
-url: https://<your-username>.github.io
-baseurl: ""   # 사용자/조직 페이지면 빈값
+url: https://signaltrove.github.io
+baseurl: ""
 timezone: Asia/Seoul
-permalink: /:categories/:year/:month/:day/:title/
+markdown: kramdown
 
-# GitHub Pages에서 허용되는 플러그인만 사용
+# 테마를 쓰고 있다면 남겨도 되고(예: minima), 없어도 됩니다.
+# theme: minima
+
 plugins:
-  - jekyll-feed
   - jekyll-seo-tag
+  - jekyll-feed
   - jekyll-sitemap
-  - jekyll-paginate
-
-# jekyll-paginate는 index(홈)에서만 동작
-paginate: 10
-paginate_path: "/page:num/"
-
-# 빌드에 포함할 폴더
-include:
-  - _pages
-  - assets
-
-# 기본 네비게이션용 카테고리 레이블(크롤러에서 쓰는 것과 동일)
-collections:
-  pages:
-    output: true
