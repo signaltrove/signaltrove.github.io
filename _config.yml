@@ -1,4 +1,27 @@
-title: signaltrove.github.io
-description: SignalTrove 블로그
-url: https://signaltrove.github.io
-baseurl: ""    # User/Org 페이지는 빈 문자열
+# _config.yml
+title: SignalTrove
+url: https://<your-username>.github.io
+baseurl: ""   # 사용자/조직 페이지면 빈값
+timezone: Asia/Seoul
+permalink: /:categories/:year/:month/:day/:title/
+
+# GitHub Pages에서 허용되는 플러그인만 사용
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-sitemap
+  - jekyll-paginate
+
+# jekyll-paginate는 index(홈)에서만 동작
+paginate: 10
+paginate_path: "/page:num/"
+
+# 빌드에 포함할 폴더
+include:
+  - _pages
+  - assets
+
+# 기본 네비게이션용 카테고리 레이블(크롤러에서 쓰는 것과 동일)
+collections:
+  pages:
+    output: true
