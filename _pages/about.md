@@ -5,12 +5,12 @@ permalink: /about/
 ---
 
 <div class="about-hero">
-  <!-- 이미지 왼쪽 -->
+  <!-- 이미지: 왼쪽 -->
   <div class="about-image">
     <img src="{{ '/assets/img/about/cover.jpg' | relative_url }}" alt="About SignalTrove" loading="lazy">
   </div>
 
-  <!-- 텍스트 오른쪽 -->
+  <!-- 문구: 오른쪽 -->
   <div class="about-copy">
     <h1>SignalTrove 소개</h1>
     <p class="lead">
@@ -26,7 +26,7 @@ permalink: /about/
       <li><strong>학습·자기계발</strong> — 학습 프레임, 루틴, 도구화와 자동화</li>
     </ul>
     <p class="sub">
-      포스트는 크롤러를 통해 선별되고 자체 템플릿으로 정돈되어 게시됩니다.
+      포스트는 크롤러로 선별되고 템플릿으로 정돈되어 게시됩니다.
       모든 코드는 점진적으로 개선하며, 독자 피드백을 환영합니다.
     </p>
   </div>
