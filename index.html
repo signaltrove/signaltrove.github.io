@@ -7,27 +7,28 @@ title: 홈
   {% assign wanted = "경제·투자|IT·기술 트렌드|라이프스타일·건강|학습·자기계발" | split: "|" %}
 
   {% for cname in wanted %}
-    {% assign posts_in_cat = site.categories[cname] | sort: "date" | reverse %}
+    {% assign posts_in_cat = site.categories[cname] %}
     {% if posts_in_cat and posts_in_cat.size > 0 %}
-    <div style="margin-bottom:28px">
-      <div class="section-head">
-        <h2>{{ cname }}</h2>
-        <a href="{{ '/category/' | append: cname | append: '/' | relative_url }}">더 보기</a>
+      {% assign posts_sorted = posts_in_cat | sort: "date" | reverse %}
+      <div style="margin-bottom:28px">
+        <div class="section-head">
+          <h2>{{ cname }}</h2>
+          <a href="{{ '/category/' | append: cname | append: '/' | relative_url }}">더 보기</a>
+        </div>
+        <div class="cards">
+          {% for p in posts_sorted limit:4 %}
+          <a class="card" href="{{ p.url | relative_url }}">
+            {% if p.image %}<div class="thumb" style="background-image:url('{{ p.image | relative_url }}');"></div>{% endif %}
+            <div class="meta">
+              <div class="cat">{{ cname }}</div>
+              <h3 class="title">{{ p.title }}</h3>
+              {% if p.description %}<p class="desc">{{ p.description }}</p>{% endif %}
+              <div class="date">{{ p.date | date: "%Y-%m-%d" }}</div>
+            </div>
+          </a>
+          {% endfor %}
+        </div>
       </div>
-      <div class="cards">
-        {% for p in posts_in_cat limit:4 %}
-        <a class="card" href="{{ p.url | relative_url }}">
-          {% if p.image %}<div class="thumb" style="background-image:url('{{ p.image | relative_url }}');"></div>{% endif %}
-          <div class="meta">
-            <div class="cat">{{ cname }}</div>
-            <h3 class="title">{{ p.title }}</h3>
-            {% if p.description %}<p class="desc">{{ p.description }}</p>{% endif %}
-            <div class="date">{{ p.date | date: "%Y-%m-%d" }}</div>
-          </div>
-        </a>
-        {% endfor %}
-      </div>
-    </div>
     {% endif %}
   {% endfor %}
 </div>
